@@ -29,8 +29,6 @@ class SearchImage extends ContentComponent {
   displayImage(imageList) {
     const image = document.createElement('img');
     image.src = imageList[Math.floor(Math.random() * imageList.length)];
-    this.clearContent();
-    this.clearErrors();
     document.querySelector('#content').appendChild(image);
   }
 
@@ -39,6 +37,7 @@ class SearchImage extends ContentComponent {
     <form class="dog-search">
       <span class="search-icon"></span>
       <input type="text" id="dogSearchInput">
+      <input type="text" id="imageNumberInput" placeholder="1">
       <button type="submit">Search</button>
     </form>
     `;
@@ -54,7 +53,19 @@ class SearchImage extends ContentComponent {
       this.getImages(searchTerm)
         .then((imageList) => {
           if (imageList) {
-            this.displayImage(imageList);
+            this.clearContent();
+            this.clearErrors();
+            const count = Math.floor(Number(document.querySelector('#imageNumberInput').value));
+            if (isNaN(count) || count == '') {
+              document.querySelector('#imageNumberInput').value = 1;
+              count == 1;
+              this.displayImage(imageList);
+            } else {
+              for (let i = 1; i < count + 1; i++) {
+                document.querySelector('#imageNumberInput').value = count;
+                this.displayImage(imageList);
+              }
+            }
           } else {
             this.displayError('Breed not found. Please try to list the breeds first.');
           }
