@@ -1,0 +1,31 @@
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  background-color: #e5e5e5;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1 {
+  color: #3d3d3d;
+  text-align: center;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#content {
+  text-align: center;
+  padding: 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0;
+  justify-content: center;
+}

@@ -1,0 +1,44 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+input {
+  border-radius: 100px;
+  padding-left: 40px;
+  height: 40px;
+  border: 1px solid #b7b7b7;
+  font-size: 1.2rem;
+  box-shadow: 0 3px 17px 3px rgba(0, 0, 0, 0.22);
+  margin: 10px;
+}
+
+#imageNumberInput {
+  width: 80px;
+  padding: 0;
+  text-align: center;
+}
+
+.search-icon {
+  position: relative;
+}
+
+.search-icon::before {
+  content: "";
+  background-image: url("./img/Search_Icon.svg");
+  background-size: 100%;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  left: 25px;
+  top: -10px;
+}
+
+#content img {
+  border-radius: 10px;
+  object-fit: cover;
+  max-width: 100%;
+  margin: 1rem;
+}
