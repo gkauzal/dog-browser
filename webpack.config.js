@@ -51,7 +51,7 @@ const config = {
       },
       {
         //the test defines the file type in regex format
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|gif)$/,
         // here we can specify which loader should be used
         // for the given file type
         use: {

@@ -18,7 +18,6 @@ class ListBreeds extends ContentComponent {
       return data.message;
     } else {
       const data = JSON.parse(localStorage.getItem('data'));
-      console.log('ls_data');
       return data.message;
     }
   }

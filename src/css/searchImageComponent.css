@@ -25,8 +25,8 @@ input {
 }
 
 .search-icon::before {
-  content: "";
-  background-image: url("./img/Search_Icon.svg");
+  content: '';
+  background-image: url('./img/Search_Icon.svg');
   background-size: 100%;
   position: absolute;
   width: 20px;
@@ -34,6 +34,28 @@ input {
   z-index: 1;
   left: 25px;
   top: -10px;
+}
+
+img {
+  display: block;
+  border: 0;
+  width: 220px;
+  height: 280px;
+}
+img.lazy {
+  opacity: 0.5;
+}
+img:not(.initial) {
+  transition: opacity 1s;
+}
+img.initial,
+img.loaded,
+img.error {
+  opacity: 1;
+}
+
+img:not([src]) {
+  visibility: hidden;
 }
 
 #content img {
